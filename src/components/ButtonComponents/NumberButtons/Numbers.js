@@ -9,17 +9,17 @@ import { numbers } from '../../../data'
 */
 //Import your array data to from the provided data file
 
-const Numbers = () => {
+const Numbers = (props) => {
    // STEP 2 - add the imported data to state
   const [numberState, setNumberState] = useState(numbers);
-  const [newNumberState, setNewNumberState] = useState([""]);
-console.log("gggggg: ", newNumberState)
+//   const [newNumberState, setNewNumberState] = useState([""]);
+// console.log("gggggg: ", newNumberState)
   
-const buttonPressed1 = e => {
-    setNewNumberState([
-      [newNumberState[0] = e.target.textContent]
-    ]) 
- }
+// const buttonPressed1 = e => {
+//     setNewNumberState([
+//       [newNumberState[0] = e.target.textContent]
+//     ]) 
+
 
 
   return (
@@ -30,7 +30,7 @@ const buttonPressed1 = e => {
       {
         numberState.map(function (ele) {
           console.log("yyyyyy: ", ele.value)
-        return  <NumberButton  number = {ele} clickFn = {buttonPressed1} />
+        return  <NumberButton  number = {ele} clickFunc={props.changeNumber} />
         })
       }
     </div>
